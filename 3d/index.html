@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RafaGFX | 3D Roblox Thumbnails, no AI</title>
+<meta name="description" content="Roblox thumbnails and icons rendered in 3D, made to get clicked. 48h delivery, 2 revisions.">
+<link rel="canonical" href="https://rafaeljarosewski-oss.github.io/rafagfx/3d/">
+<meta property="og:title" content="RafaGFX | Roblox Thumbnails & Icons">
+<meta property="og:description" content="Thumbnails that get clicked. Before and afters, prices and how to order.">
+<meta property="og:image" content="https://rafaeljarosewski-oss.github.io/rafagfx/3d/img/og.jpg">
+<meta property="og:url" content="https://rafaeljarosewski-oss.github.io/rafagfx/3d/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0820; --bg1: #0f0926; --bg2: #1a0f40; --card: #1c1245; --line: rgba(255,255,255,.1);
+    --purple: #7b2ff7; --pink: #f107a3; --yellow: #ffd23f; --orange: #ff8a00; --cyan: #2de2ff;
+    --txt: #f3effd; --mut: #b4aad6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg1); color: var(--txt); font: 400 17px/1.55 'Rubik', system-ui, sans-serif; overflow-x: hidden; }
+  html[data-l="en"] [lang="pt"], html[data-l="pt"] [lang="en"] { display: none !important; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; height: auto; }
+  .wrap { width: min(1160px, 100% - 32px); margin: 0 auto; }
+
+  /* Titulo no estilo das thumbs: Lilita com contorno grosso */
+  .h { font-family: 'Lilita One', sans-serif; font-weight: 400; line-height: 1.02; letter-spacing: .005em; }
+  .y { background: linear-gradient(180deg, #fff6b0 0%, var(--yellow) 45%, var(--orange) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* text-shadow herdado aparece por cima do texto transparente; a sombra do degrade vem do drop-shadow */
+  .h .y, .why .big { text-shadow: none; filter: drop-shadow(0 5px 0 var(--ink)); }
+  .kick { font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); }
+
+  /* Topo */
+  nav { position: sticky; top: 0; z-index: 20; background: rgba(15,9,38,.82); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+  .logo { font-family: 'Lilita One', sans-serif; font-size: 28px; text-decoration: none; transform: skewX(-8deg); display: inline-block;
+    text-shadow: 0 3px 0 var(--ink); }
+  .logo b { font-weight: 400; color: var(--yellow); }
+  nav .links { display: flex; gap: 22px; margin-left: auto; font-weight: 500; font-size: 15px; }
+  nav .links a { text-decoration: none; color: var(--mut); }
+  nav .links a:hover { color: #fff; }
+  .lang { display: flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+  .lang button { background: none; border: 0; color: var(--mut); font: 700 13px 'Rubik'; padding: 6px 11px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--yellow); color: var(--ink); }
+
+  .btn { display: inline-flex; align-items: center; gap: 10px; font: 800 17px 'Rubik'; text-decoration: none; padding: 15px 26px; border-radius: 14px;
+    background: linear-gradient(180deg, #ffe066, var(--yellow) 50%, #ffb400); color: var(--ink);
+    box-shadow: 0 5px 0 #b06a00, 0 12px 30px rgba(255,180,0,.25); transition: transform .12s, box-shadow .12s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #b06a00, 0 16px 36px rgba(255,180,0,.32); }
+  .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #b06a00; }
+  .btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.22); }
+  .btn.ghost:hover { box-shadow: inset 0 0 0 2px rgba(255,255,255,.5); }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: 72px 0 90px;
+    background: radial-gradient(ellipse 900px 600px at 78% 40%, #4b1aa6 0%, var(--bg2) 45%, transparent 80%); }
+  .hero::before { content: ""; position: absolute; inset: 0;
+    background: repeating-conic-gradient(from 0deg at 78% 45%, rgba(255,255,255,.05) 0 1.4deg, transparent 1.4deg 7deg);
+    -webkit-mask: radial-gradient(circle at 78% 45%, transparent 8%, #000 35%, transparent 75%); mask: radial-gradient(circle at 78% 45%, transparent 8%, #000 35%, transparent 75%); }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(48px, 6.4vw, 84px); margin: 14px 0 20px; text-shadow: 0 5px 0 var(--ink); }
+  .hero p.lead { font-size: 19px; color: var(--mut); max-width: 33em; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 26px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-weight: 700; font-size: 13.5px; padding: 7px 13px; border-radius: 99px; background: rgba(13,8,32,.6); border: 1px solid var(--line); }
+  .chip i { font-style: normal; color: var(--yellow); }
+  .stack { position: relative; aspect-ratio: 16/12; }
+  .stack .card { position: absolute; border-radius: 16px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 10px 0 var(--ink), 0 30px 60px rgba(0,0,0,.5); }
+  .stack .c1 { width: 78%; left: 0; top: 4%; transform: rotate(-5deg); }
+  .stack .c2 { width: 70%; right: 0; top: 42%; transform: rotate(4deg); }
+  .stack .ic { width: 30%; right: 3%; top: 0; transform: rotate(9deg); border-radius: 22px; }
+  .stack .cursor { position: absolute; width: 17%; left: 52%; top: 58%; filter: drop-shadow(0 6px 0 var(--ink)) drop-shadow(0 14px 18px rgba(0,0,0,.5)); }
+
+  section { padding: 84px 0; }
+  .head { max-width: 680px; margin-bottom: 40px; }
+  .head h2 { font-size: clamp(36px, 4.6vw, 56px); margin: 10px 0 12px; text-shadow: 0 4px 0 var(--ink); }
+  .head p { color: var(--mut); }
+
+  /* Antes e depois com arrastar */
+  .works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .work:first-child { grid-column: 1 / -1; }
+  .work { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px; }
+  .ba { position: relative; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; user-select: none; touch-action: pan-y; cursor: ew-resize; --p: 50%; }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .ba .after { clip-path: inset(0 0 0 var(--p)); }
+  .ba .bar { position: absolute; top: 0; bottom: 0; left: var(--p); width: 4px; margin-left: -2px; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.25); pointer-events: none; }
+  .ba .knob { position: absolute; top: 50%; left: var(--p); width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%;
+    background: var(--yellow); border: 3px solid var(--ink); display: grid; place-items: center; pointer-events: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); }
+  .ba .knob svg { width: 26px; }
+  .ba .tagb, .ba .taga { position: absolute; top: 12px; font: 800 12px 'Rubik'; letter-spacing: .12em; padding: 5px 10px; border-radius: 8px; pointer-events: none; }
+  .ba .tagb { left: 12px; background: rgba(13,8,32,.75); color: #cfc8e6; }
+  .ba .taga { right: 12px; background: var(--yellow); color: var(--ink); }
+  .ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .ba:focus-within .knob { outline: 3px solid var(--cyan); outline-offset: 3px; }
+  .work .meta { padding: 14px 6px 4px; }
+  .work h3 { font-family: 'Lilita One'; font-weight: 400; font-size: 24px; }
+  .work .meta > span { display: block; color: var(--mut); font-size: 15px; margin-top: 2px; }
+  .note { margin-top: 26px; color: var(--mut); font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .note svg { flex: none; width: 18px; margin-top: 3px; }
+
+  /* Icones */
+  .icons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .icon-pair { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+  .icon-pair figure { text-align: center; }
+  .icon-pair img { width: 100%; border-radius: 22%; }
+  .icon-pair figcaption { margin-top: 10px; font: 800 12px 'Rubik'; letter-spacing: .12em; color: var(--mut); }
+  .icon-pair figure.a figcaption { color: var(--yellow); }
+  .icon-pair .arr { width: 34px; color: var(--yellow); }
+  .icon-pair h3 { grid-column: 1 / -1; font-family: 'Lilita One'; font-weight: 400; font-size: 22px; }
+
+  /* Por que 3 thumbs */
+  .why { background: linear-gradient(135deg, #2b0f63, #4a138a 55%, #6a0f7e); border-radius: 28px; padding: 56px; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+  .why .big { font-family: 'Lilita One'; font-size: clamp(80px, 11vw, 150px); line-height: .9; white-space: nowrap; }
+  .why h2 { font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 12px; text-shadow: 0 3px 0 var(--ink); }
+  .why p { color: #e2d9ff; max-width: 36em; }
+  .why small { display: block; margin-top: 14px; color: #c3b6ea; font-size: 13px; }
+
+  /* Como funciona */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: s; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px 22px; position: relative; }
+  .step::before { counter-increment: s; content: counter(s); font-family: 'Lilita One'; font-size: 26px; color: var(--ink);
+    display: grid; place-items: center; width: 46px; height: 46px; border-radius: 13px; background: var(--yellow); margin-bottom: 16px; box-shadow: 0 4px 0 #b06a00; }
+  .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .step p { color: var(--mut); font-size: 15px; }
+
+  /* Precos */
+  .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+  .price { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px 26px; display: flex; flex-direction: column; }
+  .price.hot { background: linear-gradient(180deg, #3a1490, #241163); border: 2px solid var(--yellow); position: relative; }
+  .price .badge { position: absolute; top: -14px; left: 26px; background: var(--yellow); color: var(--ink); font: 800 12px 'Rubik'; letter-spacing: .1em; padding: 5px 11px; border-radius: 8px; }
+  .price h3 { font-size: 20px; font-weight: 800; }
+  .price .amt { font-family: 'Lilita One'; font-size: 58px; line-height: 1; margin: 14px 0 4px; }
+  .price .amt small { font-family: 'Rubik'; font-size: 16px; font-weight: 500; color: var(--mut); }
+  .price .sub { color: var(--mut); font-size: 14px; margin-bottom: 18px; }
+  .price ul { list-style: none; display: grid; gap: 9px; margin-bottom: 26px; font-size: 15px; }
+  .price li { display: flex; gap: 10px; }
+  .price li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%;
+    background: var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230d0820' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat; }
+  .price .btn { margin-top: auto; justify-content: center; }
+  .price:not(.hot) .btn { background: rgba(255,255,255,.08); color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.18); }
+  .extra { margin-top: 22px; color: var(--mut); font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px 26px; }
+  .extra b { color: #fff; font-weight: 700; }
+
+  /* Termos */
+  .terms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; }
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 14px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--yellow); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "\2212"; }
+  details p { color: var(--mut); font-size: 15px; margin-top: 8px; }
+
+  /* Chamada final */
+  .final { text-align: center; padding: 90px 0 100px; background: radial-gradient(ellipse 700px 380px at 50% 60%, #4b1aa6, transparent 75%); }
+  .final h2 { font-size: clamp(40px, 6vw, 72px); text-shadow: 0 5px 0 var(--ink); margin-bottom: 14px; }
+  .final p { color: var(--mut); margin-bottom: 30px; }
+  .final .ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+  footer { border-top: 1px solid var(--line); padding: 26px 0 34px; color: #8a80ae; font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 900px) {
+    .hero { padding: 44px 0 60px; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .stack { max-width: 520px; }
+    .works, .icons, .terms { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .prices { grid-template-columns: 1fr; max-width: 460px; }
+    .why { grid-template-columns: 1fr; gap: 14px; padding: 36px 26px; }
+    nav .links { display: none; }
+    .lang { margin-left: auto; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 520px) {
+    .steps { grid-template-columns: 1fr; }
+    .icon-pair { padding: 16px; gap: 10px; }
+    .btn { width: 100%; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Rafa<b>GFX</b></a>
+    <div class="links">
+      <a href="#work"><span lang="en">Work</span><span lang="pt">Trabalhos</span></a>
+      <a href="#pricing"><span lang="en">Pricing</span><span lang="pt">Preços</span></a>
+      <a href="#how"><span lang="en">How it works</span><span lang="pt">Como funciona</span></a>
+      <a href="#terms"><span lang="en">Terms</span><span lang="pt">Termos</span></a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="pt" aria-pressed="false">PT</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kick"><span lang="en">Roblox thumbnails & icons</span><span lang="pt">Thumbnails e ícones pra Roblox</span></div>
+      <h1 class="h">
+        <span lang="en">Thumbnails that get <span class="y">clicked.</span></span>
+        <span lang="pt">Thumbnail que faz o jogador <span class="y">clicar.</span></span>
+      </h1>
+      <p class="lead">
+        <span lang="en">Every thumbnail is a real 3D scene made in Blender: your characters posed, lit and rendered like a movie poster, with one clear idea that pops on a phone screen. No AI, start to finish.</span>
+        <span lang="pt">Cada thumbnail é uma cena 3D de verdade feita no Blender: teus personagens posados, iluminados e renderizados como cartaz de filme, com uma ideia clara que salta na tela do celular. Sem IA, do início ao fim.</span>
+      </p>
+      <div class="ctas">
+        <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener">
+          <span lang="en">Send me your game</span><span lang="pt">Me manda teu jogo</span>
+          <svg width="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn ghost" href="#work"><span lang="en">See before & after</span><span lang="pt">Ver antes e depois</span></a>
+      </div>
+      <div class="chips">
+        <span class="chip"><i>48h</i> <span lang="en">delivery</span><span lang="pt">de prazo</span></span>
+        <span class="chip"><i>2</i> <span lang="en">revisions</span><span lang="pt">revisões</span></span>
+        <span class="chip"><span lang="en">Real</span><span lang="pt">Render</span> <i>3D</i> <span lang="en">render</span><span lang="pt">de verdade</span></span>
+        <span class="chip"><i>100%</i> Blender, <span lang="en">no AI</span><span lang="pt">sem IA</span></span>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="card c1"><img src="img/tfc-depois.jpg" alt="" width="1280" height="720"></div>
+      <div class="card c2"><img src="img/punch-depois.jpg" alt="" width="1280" height="720"></div>
+      <div class="card ic"><img src="img/restore-icone-depois.jpg" alt="" width="384" height="384"></div>
+      <svg class="cursor" viewBox="-48 -48 112 128" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#ffd23f" stroke-width="7" stroke-linecap="round">
+          <line x1="-6" y1="-4" x2="-30" y2="-26"/><line x1="-10" y1="10" x2="-40" y2="12"/><line x1="6" y1="-10" x2="8" y2="-40"/>
+          <line x1="18" y1="-6" x2="34" y2="-28"/><line x1="-10" y1="24" x2="-34" y2="38"/>
+        </g>
+        <path d="M6 4 L6 64 L20 51 L30 74 L42 69 L32 47 L52 47 Z" fill="#fff" stroke="#0d0820" stroke-width="6" stroke-linejoin="round" paint-order="stroke"/>
+        <path d="M10 13 L10 50 L19 42" fill="none" stroke="#d9cffd" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">Before / After</span><span lang="pt">Antes / Depois</span></div>
+      <h2 class="h"><span lang="en">Drag the line.</span><span lang="pt">Arrasta a linha.</span></h2>
+      <p>
+        <span lang="en">Left side is the thumbnail the game uses today. Right side is my version.</span>
+        <span lang="pt">Na esquerda, a thumbnail que o jogo usa hoje. Na direita, a minha versão.</span>
+      </p>
+    </div>
+    <div class="works" id="works"></div>
+    <p class="note">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#ffd23f" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="#ffd23f" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span lang="en">Every image on this page is a raw Blender render with text added on top, no AI anywhere in the process. These are concept redesigns of live games, made to show what I can do. They were not ordered by the games' developers, and all rights to the games belong to their creators.</span>
+      <span lang="pt">Toda imagem desta página é render puro do Blender com o texto aplicado por cima, sem IA em nenhuma etapa. São redesigns de conceito de jogos que estão no ar, feitos pra mostrar o meu trabalho. Não foram encomendados pelos desenvolvedores, e os direitos de cada jogo são dos seus criadores.</span>
+    </p>
+  </div>
+</section>
+
+<section id="icons" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">Icons</span><span lang="pt">Ícones</span></div>
+      <h2 class="h"><span lang="en">Small square, big job.</span><span lang="pt">Quadrado pequeno, trabalho grande.</span></h2>
+      <p>
+        <span lang="en">The icon is what players see in search and on the home page. It has to read at 150 pixels.</span>
+        <span lang="pt">O ícone é o que o jogador vê na busca e na página inicial. Precisa ser entendido com 150 pixels.</span>
+      </p>
+    </div>
+    <div class="icons">
+      <div class="icon-pair">
+        <h3>Restore The World</h3>
+        <figure><img src="img/restore-icone-antes.jpg" alt="Restore The World icon, before" width="384" height="384" loading="lazy"><figcaption><span lang="en">BEFORE</span><span lang="pt">ANTES</span></figcaption></figure>
+        <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <figure class="a"><img src="img/restore-icone-depois.jpg" alt="Restore The World icon, after" width="384" height="384" loading="lazy"><figcaption><span lang="en">AFTER</span><span lang="pt">DEPOIS</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="why">
+      <div class="big y"><span lang="en">+8.5%</span><span lang="pt">+8,5%</span></div>
+      <div>
+        <h2 class="h">
+          <span lang="en">Why one thumbnail isn't enough</span>
+          <span lang="pt">Por que uma thumbnail só não basta</span>
+        </h2>
+        <p>
+          <span lang="en">Roblox can test up to 5 thumbnails at the same time and show each group of players the one that works best for them. In Roblox's own tests, games that did this got 8.5% more engaged players on average. That's what the Launch Pack is for: 3 different ideas, ready to test.</span>
+          <span lang="pt">O Roblox testa até 5 thumbnails ao mesmo tempo e mostra pra cada grupo de jogadores a que funciona melhor com eles. Nos testes do próprio Roblox, os jogos que fizeram isso ganharam em média 8,5% mais jogadores engajados. É pra isso que serve o Pacote Lançamento: 3 ideias diferentes, prontas pra testar.</span>
+        </p>
+        <small><span lang="en">Source: Roblox Creator Hub, Thumbnails page.</span><span lang="pt">Fonte: Roblox Creator Hub, página de Thumbnails.</span></small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">How it works</span><span lang="pt">Como funciona</span></div>
+      <h2 class="h"><span lang="en">From link to live in 48h.</span><span lang="pt">Do link à thumb nova em 48h.</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3><span lang="en">Send your game</span><span lang="pt">Manda teu jogo</span></h3>
+        <p><span lang="en">Fill the short brief: game link, what makes it fun, and what you'd like to see.</span><span lang="pt">Preenche o briefing curto: link do jogo, o que ele tem de divertido e o que tu quer ver.</span></p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">Pick the idea</span><span lang="pt">Escolhe a ideia</span></h3>
+        <p><span lang="en">I send you a quick concept. You approve it or we adjust before anything is built.</span><span lang="pt">Te mando um conceito rápido. Tu aprova ou a gente ajusta antes de eu começar.</span></p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">I build it</span><span lang="pt">Eu produzo</span></h3>
+        <p><span lang="en">After the upfront payment I bring your characters and map into a 3D scene, light it and render it.</span><span lang="pt">Depois do adiantamento, levo teus personagens e teu mapa pra uma cena 3D, ilumino e renderizo.</span></p>
+      </div>
+      <div class="step">
+        <h3><span lang="en">You get the file</span><span lang="pt">Tu recebe o arquivo</span></h3>
+        <p><span lang="en">Watermarked preview first, 2 revisions included, then the full-resolution file after payment.</span><span lang="pt">Primeiro a prévia com marca d'água, 2 revisões incluídas, e o arquivo em alta depois do pagamento.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">Pricing</span><span lang="pt">Preços</span></div>
+      <h2 class="h"><span lang="en">Simple prices.</span><span lang="pt">Preço simples.</span></h2>
+      <p><span lang="en">Launch prices while I build my client list.</span><span lang="pt">Preço de lançamento enquanto monto minha lista de clientes.</span></p>
+    </div>
+    <div class="prices">
+      <div class="price">
+        <h3><span lang="en">Thumbnail</span><span lang="pt">Thumbnail</span></h3>
+        <div class="amt"><span lang="en">$15</span><span lang="pt">R$ 60</span></div>
+        <div class="sub">1920 x 1080</div>
+        <ul>
+          <li><span lang="en">1 thumbnail</span><span lang="pt">1 thumbnail</span></li>
+          <li><span lang="en">2 revisions</span><span lang="pt">2 revisões</span></li>
+          <li><span lang="en">48h delivery</span><span lang="pt">Entrega em 48h</span></li>
+        </ul>
+        <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener"><span lang="en">Order</span><span lang="pt">Pedir</span></a>
+      </div>
+      <div class="price hot">
+        <span class="badge"><span lang="en">BEST VALUE</span><span lang="pt">MAIS VANTAGEM</span></span>
+        <h3><span lang="en">Launch Pack</span><span lang="pt">Pacote Lançamento</span></h3>
+        <div class="amt"><span lang="en">$40</span><span lang="pt">R$ 150</span></div>
+        <div class="sub"><span lang="en">Icon + 3 thumbnails</span><span lang="pt">Ícone + 3 thumbnails</span></div>
+        <ul>
+          <li><span lang="en">1 icon + 3 thumbnails with different ideas</span><span lang="pt">1 ícone + 3 thumbnails com ideias diferentes</span></li>
+          <li><span lang="en">Ready for Roblox's thumbnail testing</span><span lang="pt">Prontas pro teste de thumbnails do Roblox</span></li>
+          <li><span lang="en">2 revisions each</span><span lang="pt">2 revisões cada</span></li>
+          <li><span lang="en">72h delivery</span><span lang="pt">Entrega em 72h</span></li>
+        </ul>
+        <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener"><span lang="en">Order the pack</span><span lang="pt">Pedir o pacote</span></a>
+      </div>
+      <div class="price">
+        <h3><span lang="en">Icon</span><span lang="pt">Ícone</span></h3>
+        <div class="amt"><span lang="en">$10</span><span lang="pt">R$ 40</span></div>
+        <div class="sub">512 x 512</div>
+        <ul>
+          <li><span lang="en">1 icon</span><span lang="pt">1 ícone</span></li>
+          <li><span lang="en">2 revisions</span><span lang="pt">2 revisões</span></li>
+          <li><span lang="en">48h delivery</span><span lang="pt">Entrega em 48h</span></li>
+        </ul>
+        <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener"><span lang="en">Order</span><span lang="pt">Pedir</span></a>
+      </div>
+    </div>
+    <div class="extra">
+      <span><span lang="en">Extra revision:</span><span lang="pt">Revisão extra:</span> <b lang="en">$4</b><b lang="pt">R$ 15</b></span>
+      <span><span lang="en">Payment:</span><span lang="pt">Pagamento:</span> <b lang="en">PayPal or Wise</b><b lang="pt">Pix</b></span>
+      <span><span lang="en">50% upfront, 50% on delivery</span><span lang="pt">50% pra começar, 50% na entrega</span></span>
+    </div>
+  </div>
+</section>
+
+<section id="terms" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">Terms</span><span lang="pt">Termos</span></div>
+      <h2 class="h"><span lang="en">The short version.</span><span lang="pt">A versão curta.</span></h2>
+    </div>
+    <div class="terms" id="termsList"></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="h"><span lang="en">Got a game that <span class="y">deserves more clicks?</span></span><span lang="pt">Teu jogo merece <span class="y">mais cliques?</span></span></h2>
+    <p><span lang="en">Send the link. I'll reply with an idea for your thumbnail.</span><span lang="pt">Manda o link. Te respondo com uma ideia pra tua thumbnail.</span></p>
+    <div class="ctas" id="contacts">
+      <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener"><span lang="en">Send me your game</span><span lang="pt">Me manda teu jogo</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 RafaGFX</span>
+    <span><span lang="en">Not affiliated with Roblox Corporation.</span><span lang="pt">Sem vínculo com a Roblox Corporation.</span></span>
+  </div>
+</footer>
+
+<script>
+  // Perfis de contato: preencher quando tiver o link, os vazios nao aparecem
+  const CONTATOS = { x: "https://x.com/a1231245", discord: "https://discord.com/users/1487401963086680136" };
+
+  const BRIEF = { en: "https://tally.so/r/gbbkDl", pt: "https://tally.so/r/EqqNkX" };
+
+  const TRABALHOS = [
+    { slug: "tfc", nome: "That Freekick Challenge",
+      en: "A packed stadium at sunset, the wall jumping in shock and the game's own aim line curling into the top corner.",
+      pt: "Estádio lotado no pôr do sol, a barreira pulando em choque e a mira do próprio jogo entrando no ângulo." },
+    { slug: "punch", nome: "Punch to Escape",
+      en: "Seen from outside the prison: one punch through the wall, bricks flying at you.",
+      pt: "Visto de fora da prisão: um soco atravessa o muro e os tijolos voam pra cima de você." },
+    { slug: "restore", nome: "Restore The World",
+      en: "The whole game in one picture: dead land turning green, tile by tile, where the water hits.",
+      pt: "O jogo inteiro numa imagem: o mundo morto virando verde, quadrado por quadrado, onde a água cai." },
+    { slug: "romusic", nome: "RoMusic",
+      en: "A screenshot of the music player became the feeling of the music: headphones on, speakers glowing, phonk in the air.",
+      pt: "O print do player virou a sensação da música: fone na cabeça, caixas acesas e phonk no ar." }
+  ];
+
+  const TERMOS = [
+    ["Payment", "50% to start, 50% on delivery. New clients or orders under $15: 100% upfront. PayPal or Wise.",
+     "Pagamento", "50% pra começar e 50% na entrega. Pedido abaixo de R$ 60 ou cliente novo: 100% adiantado. Pix."],
+    ["Delivery", "48h for a thumbnail or icon, 72h for the Launch Pack. The clock starts after payment and a complete brief.",
+     "Prazo", "48h pra thumbnail ou ícone e 72h pro Pacote Lançamento, contando a partir do pagamento e do briefing completo."],
+    ["Revisions", "2 revisions included. A revision is a change to the same idea (color, text, pose, position). A new idea is a new order.",
+     "Revisões", "2 revisões incluídas. Revisão é ajuste na mesma ideia (cor, texto, pose, posição). Ideia nova conta como novo pedido."],
+    ["Preview", "Previews are low resolution and watermarked. You get the final file after full payment.",
+     "Prévia", "A prévia vai em baixa resolução e com marca d'água. O arquivo final vai depois do pagamento total."],
+    ["Game access", "You give me what I need to capture the game: game access, Team Create, or a place file with the map and models. Late material means late delivery.",
+     "Material do jogo", "Tu me passa o que for preciso pra captura: acesso ao jogo, Team Create ou arquivo do mapa e dos modelos. Atraso no material atrasa a entrega."],
+    ["Roblox rules", "I don't make art that misleads about the game, uses fake Robux as bait, or uses characters or brands owned by others.",
+     "Regras do Roblox", "Não faço arte que engana sobre o jogo, usa Robux falso como isca ou usa personagens e marcas de outros."],
+    ["Portfolio", "I can show the work in my portfolio after your game uses it. If you'd rather I didn't, tell me before we start.",
+     "Portfólio", "Posso mostrar o trabalho no meu portfólio depois que o jogo usar a arte. Se preferir que não, é só avisar antes de começar."],
+    ["Cancellation", "Cancel before I start and you get a full refund. After the first preview, the upfront payment is not refunded.",
+     "Cancelamento", "Se cancelar antes de eu começar, devolvo tudo. Depois da primeira prévia, o adiantamento não é devolvido."]
+  ];
+
+  const seta = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="#0d0820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.getElementById("works").innerHTML = TRABALHOS.map((t, i) => `
+    <article class="work">
+      <div class="ba">
+        <img src="img/${t.slug}-antes.jpg" alt="${t.nome} thumbnail, before" width="1280" height="720" ${i ? 'loading="lazy"' : ""}>
+        <img class="after" src="img/${t.slug}-depois.jpg" alt="${t.nome} thumbnail, after" width="1280" height="720" ${i ? 'loading="lazy"' : ""}>
+        <div class="bar"></div><div class="knob">${seta}</div>
+        <span class="tagb"><span lang="en">BEFORE</span><span lang="pt">ANTES</span></span>
+        <span class="taga"><span lang="en">AFTER</span><span lang="pt">DEPOIS</span></span>
+        <input type="range" min="0" max="100" value="50" aria-label="${t.nome}: before and after">
+      </div>
+      <div class="meta"><h3>${t.nome}</h3><span><span lang="en">${t.en}</span><span lang="pt">${t.pt}</span></span></div>
+    </article>`).join("");
+
+  document.querySelectorAll(".ba").forEach(ba => {
+    const r = ba.querySelector("input");
+    r.addEventListener("input", () => ba.style.setProperty("--p", r.value + "%"));
+  });
+
+  document.getElementById("termsList").innerHTML = TERMOS.map(([te, de, tp, dp]) => `
+    <details><summary><span lang="en">${te}</span><span lang="pt">${tp}</span></summary>
+    <p><span lang="en">${de}</span><span lang="pt">${dp}</span></p></details>`).join("");
+
+  const nomes = { x: "X", discord: "Discord" };
+  Object.entries(CONTATOS).filter(([, url]) => url).forEach(([k, url]) => {
+    document.getElementById("contacts").insertAdjacentHTML("beforeend",
+      `<a class="btn ghost" href="${url}" target="_blank" rel="noopener">${nomes[k]}</a>`);
+  });
+
+  function idioma(l) {
+    document.documentElement.dataset.l = l;
+    document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
+    document.querySelectorAll("[data-set]").forEach(b => b.setAttribute("aria-pressed", b.dataset.set === l));
+    document.querySelectorAll("[data-brief]").forEach(a => a.href = BRIEF[l]);
+    try { localStorage.setItem("rgfx-l", l); } catch (e) {}
+  }
+  document.querySelectorAll("[data-set]").forEach(b => b.addEventListener("click", () => idioma(b.dataset.set)));
+  let inicial = new URLSearchParams(location.search).get("lang");
+  if (!inicial) { try { inicial = localStorage.getItem("rgfx-l"); } catch (e) {} }
+  if (!inicial) inicial = (navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en";
+  idioma(inicial === "pt" ? "pt" : "en");
+</script>
+</body>
+</html>
