@@ -114,6 +114,16 @@
   .icon-pair .arr { width: 34px; color: var(--yellow); }
   .icon-pair h3 { grid-column: 1 / -1; font-family: 'Lilita One'; font-weight: 400; font-size: 22px; }
 
+  /* Shorts animados */
+  .motion { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 48px; align-items: center; }
+  .motion video { width: 100%; aspect-ratio: 9/16; border-radius: 22px; border: 4px solid #fff; background: #000;
+    box-shadow: 0 10px 0 var(--ink), 0 30px 60px rgba(0,0,0,.5); }
+  .motion ul { list-style: none; display: grid; gap: 10px; margin: 22px 0 28px; }
+  .motion li { display: flex; gap: 10px; color: var(--mut); }
+  .motion li b { color: #fff; font-weight: 700; }
+  .motion li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 4px; border-radius: 50%;
+    background: var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230d0820' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat; }
+
   /* Por que 3 thumbs */
   .why { background: linear-gradient(135deg, #2b0f63, #4a138a 55%, #6a0f7e); border-radius: 28px; padding: 56px; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
   .why .big { font-family: 'Lilita One'; font-size: clamp(80px, 11vw, 150px); line-height: .9; white-space: nowrap; }
@@ -169,6 +179,8 @@
     .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
     .stack { max-width: 520px; }
     .works, .icons, .terms { grid-template-columns: 1fr; }
+    .motion { grid-template-columns: 1fr; gap: 28px; }
+    .motion video { max-width: 340px; margin: 0 auto; }
     .steps { grid-template-columns: 1fr 1fr; }
     .prices { grid-template-columns: 1fr; max-width: 460px; }
     .why { grid-template-columns: 1fr; gap: 14px; padding: 36px 26px; }
@@ -191,6 +203,7 @@
     <a class="logo" href="#top">Rafa<b>GFX</b></a>
     <div class="links">
       <a href="#work"><span lang="en">Work</span><span lang="pt">Trabalhos</span></a>
+      <a href="#motion"><span lang="en">Shorts</span><span lang="pt">Shorts</span></a>
       <a href="#pricing"><span lang="en">Pricing</span><span lang="pt">Preços</span></a>
       <a href="#how"><span lang="en">How it works</span><span lang="pt">Como funciona</span></a>
       <a href="#terms"><span lang="en">Terms</span><span lang="pt">Termos</span></a>
@@ -285,6 +298,35 @@
         <figure><img src="img/brazil-icone-antes.jpg" alt="Brazil Motorsport icon, before" width="384" height="384" loading="lazy"><figcaption><span lang="en">BEFORE</span><span lang="pt">ANTES</span></figcaption></figure>
         <svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <figure class="a"><img src="img/brazil-icone-depois.jpg" alt="Brazil Motorsport icon, after" width="384" height="384" loading="lazy"><figcaption><span lang="en">AFTER</span><span lang="pt">DEPOIS</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="motion" style="padding-top:0">
+  <div class="wrap">
+    <div class="motion">
+      <video src="img/go-deeper.mp4" poster="img/go-deeper-poster.jpg" controls playsinline loop preload="none" width="1080" height="1920"
+        aria-label="Go Deeper, animated Roblox short made in Blender"></video>
+      <div>
+        <div class="kick"><span lang="en">Animated shorts</span><span lang="pt">Shorts animados</span></div>
+        <h2 class="h" style="font-size:clamp(36px,4.6vw,56px);margin:10px 0 12px;text-shadow:0 4px 0 var(--ink)">
+          <span lang="en">Your game, <span class="y">moving.</span></span>
+          <span lang="pt">Teu jogo <span class="y">em movimento.</span></span>
+        </h2>
+        <p style="color:var(--mut)">
+          <span lang="en">Short vertical videos for TikTok, YouTube Shorts and Reels, animated in 3D: a hook in the first second, the moment that makes your game fun, and your title at the end.</span>
+          <span lang="pt">Vídeos curtos na vertical pra TikTok, YouTube Shorts e Reels, animados em 3D: um gancho no primeiro segundo, o momento que faz teu jogo ser divertido e o nome dele no fim.</span>
+        </p>
+        <ul>
+          <li><span lang="en"><b>Animated in Blender</b>, no AI, from your game's own models</span><span lang="pt"><b>Animado no Blender</b>, sem IA, com os modelos do teu jogo</span></li>
+          <li><span lang="en"><b>Sound design included:</b> hits, whooshes and an original beat</span><span lang="pt"><b>Som incluso:</b> impactos, whooshes e uma batida original</span></li>
+          <li><span lang="en"><b>9:16, 10 to 30 seconds</b>, ready to post</span><span lang="pt"><b>9:16, de 10 a 30 segundos</b>, pronto pra postar</span></li>
+        </ul>
+        <a class="btn" data-brief href="https://tally.so/r/gbbkDl" target="_blank" rel="noopener">
+          <span lang="en">Ask for a short</span><span lang="pt">Pedir um short</span>
+          <svg width="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </div>
