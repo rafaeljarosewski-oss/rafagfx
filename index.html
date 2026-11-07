@@ -114,6 +114,10 @@
   .icon-pair .arr { width: 34px; color: var(--yellow); }
   .icon-pair h3 { grid-column: 1 / -1; font-family: 'Lilita One'; font-weight: 400; font-size: 22px; }
 
+  /* Outros estilos */
+  .estilos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .estilos img { border-radius: 12px; width: 100%; }
+
   /* Shorts animados */
   .motion { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 48px; align-items: center; }
   .motion video { width: 100%; height: auto; aspect-ratio: 9/16; border-radius: 22px; border: 4px solid #fff; background: #000;
@@ -178,7 +182,7 @@
     .hero { padding: 44px 0 60px; }
     .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
     .stack { max-width: 520px; }
-    .works, .icons, .terms { grid-template-columns: 1fr; }
+    .works, .icons, .terms, .estilos { grid-template-columns: 1fr; }
     .motion { grid-template-columns: 1fr; gap: 28px; }
     .motion video { max-width: 340px; margin: 0 auto; }
     .steps { grid-template-columns: 1fr 1fr; }
@@ -273,6 +277,31 @@
       <span lang="en">These are concept redesigns of live games, made to show what I can do. They were not ordered by the games' developers, and all rights to the games belong to their creators.</span>
       <span lang="pt">São redesigns de conceito de jogos que estão no ar, feitos pra mostrar o meu trabalho. Não foram encomendados pelos desenvolvedores, e os direitos de cada jogo são dos seus criadores.</span>
     </p>
+  </div>
+</section>
+
+<section id="styles" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick"><span lang="en">Other styles</span><span lang="pt">Outros estilos</span></div>
+      <h2 class="h"><span lang="en">Not just bright and <span class="y">cartoony.</span></span><span lang="pt">Não é só colorido e <span class="y">cartunesco.</span></span></h2>
+      <p>
+        <span lang="en">The style follows your game. Two original pieces in other moods, made with the same process: a real 3D scene in Blender, no AI.</span>
+        <span lang="pt">O estilo segue o teu jogo. Duas peças originais em outros climas, feitas do mesmo jeito: cena 3D de verdade no Blender, sem IA.</span>
+      </p>
+    </div>
+    <div class="estilos">
+      <div class="work">
+        <img src="img/estilo-rpg.jpg" alt="Fantasy RPG thumbnail: an armored hero with a glowing sword in front of a giant horned boss" width="1280" height="720" loading="lazy">
+        <div class="meta"><h3><span lang="en">Fantasy RPG</span><span lang="pt">RPG de fantasia</span></h3>
+          <span lang="en">Stud-style arena, torchlight and embers, a boss that towers over the hero.</span><span lang="pt">Arena em estilo stud, luz de tocha e brasas, um chefão que se agiganta sobre o herói.</span></div>
+      </div>
+      <div class="work">
+        <img src="img/estilo-tatico.jpg" alt="Tactical shooter thumbnail: an operator aiming a rifle, flashlight beam cutting through smoke" width="1280" height="720" loading="lazy">
+        <div class="meta"><h3><span lang="en">Dark tactical</span><span lang="pt">Tático e escuro</span></h3>
+          <span lang="en">Flashlight beam through smoke, red emergency rim light, cold moonlight.</span><span lang="pt">Feixe de lanterna na fumaça, recorte vermelho de emergência e luz fria da lua.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
